@@ -1,0 +1,120 @@
+(footprint "Power_Port"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -1.905 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "df72282a-4c5a-457e-b154-9e21514b1210")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Power_Port"
+		(at 0 -3.81 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "66501114-4167-4af8-8a94-15dd436effc2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1f37409a-2b00-4a2e-a0e3-7cebafcac6f3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "eb56300f-b6ae-4aaa-a81c-22b853d1e0d4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_text user "+"
+		(at -3.175 0.635 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "496429e1-257a-4881-90c5-c372fe8c8c51")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "-"
+		(at 1.905 0.635 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "81859499-3a9a-49a9-8da4-f72b2a6abaf2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "b9651ab5-c775-4bf4-bc43-0936f9dd4d55")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole roundrect
+		(at -1.27 0 90)
+		(size 2 1.6)
+		(drill 0.9
+			(offset -0.2 0)
+		)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "cf8ed4c1-a336-4907-9ff5-3b61a7e8135c")
+	)
+	(pad "2" thru_hole roundrect
+		(at 1.27 0 90)
+		(size 2 1.6)
+		(drill 0.9
+			(offset -0.2 0)
+		)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(roundrect_rratio 0.15)
+		(thermal_bridge_angle 45)
+		(uuid "e41605c0-5722-4dda-be50-9bcc2b1ecc0b")
+	)
+	(embedded_fonts no)
+)
