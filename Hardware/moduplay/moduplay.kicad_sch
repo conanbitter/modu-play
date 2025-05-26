@@ -3058,7 +3058,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 93.98 92.71 0)
 			(effects
 				(font
@@ -3126,7 +3126,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 132.08 80.01 0)
 			(effects
 				(font
@@ -3262,7 +3262,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
 			(at 268.605 83.82 90)
 			(effects
 				(font
@@ -3462,7 +3462,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 106.68 116.84 0)
 			(effects
 				(font
@@ -3530,7 +3530,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "local:Power_Switch"
 			(at 90.17 166.37 0)
 			(effects
 				(font
@@ -3730,7 +3730,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 81.28 80.01 0)
 			(effects
 				(font
@@ -3798,7 +3798,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 68.58 92.71 0)
 			(effects
 				(font
@@ -4064,7 +4064,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "local:Edge_Connector_Slot"
 			(at 223.52 92.71 0)
 			(effects
 				(font
@@ -4282,7 +4282,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 132.08 105.41 0)
 			(effects
 				(font
@@ -4350,7 +4350,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 119.38 92.71 0)
 			(effects
 				(font
@@ -4486,7 +4486,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "local:Screen_Port"
 			(at 109.22 43.18 0)
 			(effects
 				(font
@@ -4569,7 +4569,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 81.28 105.41 0)
 			(effects
 				(font
@@ -4637,7 +4637,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H5mm"
 			(at 144.78 92.71 0)
 			(effects
 				(font
@@ -4705,7 +4705,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "local:Power_Port"
 			(at 72.644 166.37 90)
 			(effects
 				(font
