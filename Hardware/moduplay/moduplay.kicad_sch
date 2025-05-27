@@ -9,37 +9,32 @@
 		(date "2025-05-25")
 	)
 	(lib_symbols
-		(symbol "Device:Battery"
-			(pin_numbers
-				(hide yes)
-			)
+		(symbol "Connector_Generic:Conn_01x01"
 			(pin_names
-				(offset 0)
+				(offset 1.016)
 				(hide yes)
 			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "BT"
-				(at 2.54 2.54 0)
+			(property "Reference" "J"
+				(at 0 2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
-			(property "Value" "Battery"
-				(at 2.54 0 0)
+			(property "Value" "Conn_01x01"
+				(at 0 -2.54 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
-				(at 0 1.524 90)
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -48,15 +43,6 @@
 				)
 			)
 			(property "Datasheet" "~"
-				(at 0 1.524 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Multiple-cell battery"
 				(at 0 0 0)
 				(effects
 					(font
@@ -65,7 +51,7 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "batt voltage-source cell"
+			(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
 				(at 0 0 0)
 				(effects
 					(font
@@ -74,129 +60,51 @@
 					(hide yes)
 				)
 			)
-			(symbol "Battery_0_1"
-				(rectangle
-					(start -2.286 1.778)
-					(end 2.286 1.524)
-					(stroke
-						(width 0)
-						(type default)
+			(property "ki_keywords" "connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
 					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -2.286 -1.27)
-					(end 2.286 -1.524)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -1.524 1.016)
-					(end 1.524 0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -1.524 -2.032)
-					(end 1.524 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.778) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.508) (xy 0 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.016) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 3.048) (xy 1.778 3.048)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 3.556) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
+					(hide yes)
 				)
 			)
-			(symbol "Battery_1_1"
+			(property "ki_fp_filters" "Connector*:*_1x??_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Conn_01x01_1_1"
+				(rectangle
+					(start -1.27 1.27)
+					(end 1.27 -1.27)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(rectangle
+					(start -1.27 0.127)
+					(end 0 -0.127)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "+"
+					(at -5.08 0 0)
+					(length 3.81)
+					(name "Pin_1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -204,24 +112,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1914,6 +1804,16 @@
 	)
 	(wire
 		(pts
+			(xy 269.24 82.55) (xy 270.51 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "090a6393-de23-41e8-b87f-52c737b2cda2")
+	)
+	(wire
+		(pts
 			(xy 63.5 130.81) (xy 177.8 130.81)
 		)
 		(stroke
@@ -1934,6 +1834,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 71.12) (xy 252.73 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f97346d-0200-4207-b967-5dc5d24880e8")
+	)
+	(wire
+		(pts
 			(xy 172.72 87.63) (xy 207.01 87.63)
 		)
 		(stroke
@@ -1944,7 +1854,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 166.37) (xy 104.14 166.37)
+			(xy 106.68 166.37) (xy 113.03 166.37)
 		)
 		(stroke
 			(width 0)
@@ -2194,6 +2104,16 @@
 	)
 	(wire
 		(pts
+			(xy 269.24 71.12) (xy 267.97 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4758d085-f12d-48b1-8f6b-03df3b3e86e6")
+	)
+	(wire
+		(pts
 			(xy 127 87.63) (xy 160.02 87.63)
 		)
 		(stroke
@@ -2214,7 +2134,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 85.09) (xy 254 85.09)
+			(xy 241.3 85.09) (xy 251.46 85.09)
 		)
 		(stroke
 			(width 0)
@@ -2231,6 +2151,16 @@
 			(type default)
 		)
 		(uuid "4ab22159-4fa1-4951-8523-5fd57bb5389a")
+	)
+	(wire
+		(pts
+			(xy 85.09 166.37) (xy 91.44 166.37)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4db31e68-0f82-4747-810a-e981fd6d5dc6")
 	)
 	(wire
 		(pts
@@ -2311,6 +2241,16 @@
 			(type default)
 		)
 		(uuid "611858c2-ae5d-4abf-ace8-c836393c39ed")
+	)
+	(wire
+		(pts
+			(xy 269.24 82.55) (xy 269.24 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "61cc8f8a-1fbe-49e4-bd11-7bbfdf89dc9f")
 	)
 	(wire
 		(pts
@@ -2494,16 +2434,6 @@
 	)
 	(wire
 		(pts
-			(xy 254 87.63) (xy 254 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "91d66ed6-08b8-49db-b35f-010438795ff3")
-	)
-	(wire
-		(pts
 			(xy 175.26 128.27) (xy 175.26 95.25)
 		)
 		(stroke
@@ -2594,7 +2524,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 166.37) (xy 104.14 162.56)
+			(xy 113.03 166.37) (xy 113.03 162.56)
 		)
 		(stroke
 			(width 0)
@@ -2694,7 +2624,7 @@
 	)
 	(wire
 		(pts
-			(xy 241.3 87.63) (xy 254 87.63)
+			(xy 241.3 87.63) (xy 270.51 87.63)
 		)
 		(stroke
 			(width 0)
@@ -2711,16 +2641,6 @@
 			(type default)
 		)
 		(uuid "b9642994-327a-47a6-a345-7da261907916")
-	)
-	(wire
-		(pts
-			(xy 254 88.9) (xy 266.7 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b966be1f-df6e-4fab-8ce0-d51b9c9c5602")
 	)
 	(wire
 		(pts
@@ -2754,16 +2674,6 @@
 	)
 	(wire
 		(pts
-			(xy 254 83.82) (xy 266.7 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c6ab6dce-4080-4696-b244-06dbf3b010f3")
-	)
-	(wire
-		(pts
 			(xy 137.16 85.09) (xy 162.56 85.09)
 		)
 		(stroke
@@ -2791,16 +2701,6 @@
 			(type default)
 		)
 		(uuid "cff6498a-06d4-4540-bfb7-91152d3f5c24")
-	)
-	(wire
-		(pts
-			(xy 76.2 166.37) (xy 82.55 166.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d074d1fd-5369-4330-bf8f-4aa601ea37b1")
 	)
 	(wire
 		(pts
@@ -3024,7 +2924,7 @@
 	)
 	(wire
 		(pts
-			(xy 254 85.09) (xy 254 83.82)
+			(xy 251.46 71.12) (xy 251.46 85.09)
 		)
 		(stroke
 			(width 0)
@@ -3236,7 +3136,7 @@
 	)
 	(symbol
 		(lib_id "Device:Buzzer")
-		(at 269.24 86.36 0)
+		(at 273.05 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3245,7 +3145,7 @@
 		(fields_autoplaced yes)
 		(uuid "30ca4efc-1d44-4e0d-abcf-49d4ac637773")
 		(property "Reference" "BZ1"
-			(at 273.05 85.0899 0)
+			(at 276.86 83.8199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3254,7 +3154,7 @@
 			)
 		)
 		(property "Value" "Buzzer"
-			(at 273.05 87.6299 0)
+			(at 276.86 86.3599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3263,7 +3163,7 @@
 			)
 		)
 		(property "Footprint" "Buzzer_Beeper:Buzzer_12x9.5RM7.6"
-			(at 268.605 83.82 90)
+			(at 272.415 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3272,7 +3172,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 268.605 83.82 90)
+			(at 272.415 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3281,7 +3181,7 @@
 			)
 		)
 		(property "Description" "Buzzer, polarized"
-			(at 269.24 86.36 0)
+			(at 273.05 85.09 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3365,6 +3265,72 @@
 			(project "moduplay"
 				(path "/a0f040db-288e-40cf-b064-eb69da64d287"
 					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 71.12 166.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3b92c1b1-10cf-48d0-a901-8710019258d2")
+		(property "Reference" "J2"
+			(at 70.104 163.322 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "-"
+			(at 70.358 169.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "local:Power_Port_Single_Minus"
+			(at 71.12 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 71.12 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 71.12 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0899f52d-3c36-4bbd-87c6-84fa209062f9")
+		)
+		(instances
+			(project ""
+				(path "/a0f040db-288e-40cf-b064-eb69da64d287"
+					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -3506,7 +3472,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_DIP_x01")
-		(at 90.17 166.37 0)
+		(at 99.06 166.37 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3515,7 +3481,7 @@
 		(fields_autoplaced yes)
 		(uuid "43905aa9-ecf7-4f7a-a2c3-69b23f0c5127")
 		(property "Reference" "SW10"
-			(at 90.17 158.75 0)
+			(at 99.06 158.75 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3523,7 +3489,7 @@
 			)
 		)
 		(property "Value" "Power_Switch"
-			(at 90.17 161.29 0)
+			(at 99.06 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3531,7 +3497,7 @@
 			)
 		)
 		(property "Footprint" "local:Power_Switch"
-			(at 90.17 166.37 0)
+			(at 99.06 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3540,7 +3506,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 90.17 166.37 0)
+			(at 99.06 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3549,7 +3515,7 @@
 			)
 		)
 		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
-			(at 90.17 166.37 0)
+			(at 99.06 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3639,8 +3605,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Switch:SW_DIP_x01")
+		(at 260.35 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5f0c6185-ad98-4714-a216-bc2c165b3bb8")
+		(property "Reference" "SW11"
+			(at 260.35 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Buzzer_Switch"
+			(at 260.35 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "local:Power_Switch"
+			(at 260.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 260.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "1x DIP Switch, Single Pole Single Throw (SPST) switch, small symbol"
+			(at 260.35 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "1f3b01a5-e768-443c-b19e-64dc7ff1c577")
+		)
+		(pin "2"
+			(uuid "99068fb9-25e2-4105-a174-d9c361d79ef3")
+		)
+		(instances
+			(project "moduplay"
+				(path "/a0f040db-288e-40cf-b064-eb69da64d287"
+					(reference "SW11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VCC")
-		(at 104.14 162.56 0)
+		(at 113.03 162.56 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3649,7 +3683,7 @@
 		(fields_autoplaced yes)
 		(uuid "677cf8a1-6885-4cbe-becd-af804d67de48")
 		(property "Reference" "#PWR02"
-			(at 104.14 166.37 0)
+			(at 113.03 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3658,7 +3692,7 @@
 			)
 		)
 		(property "Value" "VCC"
-			(at 104.14 157.48 0)
+			(at 113.03 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3666,7 +3700,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 104.14 162.56 0)
+			(at 113.03 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3675,7 +3709,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 104.14 162.56 0)
+			(at 113.03 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3684,7 +3718,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VCC\""
-			(at 104.14 162.56 0)
+			(at 113.03 162.56 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4325,6 +4359,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector_Generic:Conn_01x01")
+		(at 80.01 166.37 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b29aee4e-bfde-4f18-9a72-ae8731341640")
+		(property "Reference" "J3"
+			(at 80.01 163.322 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+"
+			(at 80.01 169.418 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "local:Power_Port_Single_Plus"
+			(at 80.01 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 80.01 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"
+			(at 80.01 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e34a280b-7482-4128-ab2b-16b8033f49ba")
+		)
+		(instances
+			(project ""
+				(path "/a0f040db-288e-40cf-b064-eb69da64d287"
+					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Switch:SW_Push")
 		(at 119.38 97.79 0)
 		(unit 1)
@@ -4674,74 +4772,6 @@
 			(project "moduplay"
 				(path "/a0f040db-288e-40cf-b064-eb69da64d287"
 					(reference "SW7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Battery")
-		(at 71.12 166.37 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f93a8d87-78c3-4c0d-9e48-b51e04d3f584")
-		(property "Reference" "BT1"
-			(at 71.6915 158.75 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Battery"
-			(at 71.6915 161.29 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "local:Power_Port"
-			(at 72.644 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 72.644 166.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Multiple-cell battery"
-			(at 71.12 166.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b32bf83a-5026-44a8-be84-0062c63934bd")
-		)
-		(pin "2"
-			(uuid "eabe92cd-755e-40eb-ad39-a6b672cdfbca")
-		)
-		(instances
-			(project ""
-				(path "/a0f040db-288e-40cf-b064-eb69da64d287"
-					(reference "BT1")
 					(unit 1)
 				)
 			)
