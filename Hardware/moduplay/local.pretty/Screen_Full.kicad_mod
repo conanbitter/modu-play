@@ -58,11 +58,11 @@
 		(start -2.52 -21.575)
 		(end 69.68 21.575)
 		(stroke
-			(width 0.2)
+			(width 0.1)
 			(type solid)
 		)
 		(fill no)
-		(layer "F.SilkS")
+		(layer "Margin")
 		(uuid "a0ca3baf-50cc-4bd7-a2f0-ee0606b017d8")
 	)
 	(fp_text user "1"
@@ -101,12 +101,13 @@
 			)
 		)
 	)
-	(pad "1" thru_hole circle
+	(pad "1" thru_hole roundrect
 		(at 0 7.62 180)
 		(size 1.8 1.8)
 		(drill 0.9)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
+		(roundrect_rratio 0.1388888889)
 		(uuid "cf8ed4c1-a336-4907-9ff5-3b61a7e8135c")
 	)
 	(pad "2" thru_hole circle

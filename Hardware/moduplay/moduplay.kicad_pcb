@@ -1546,7 +1546,7 @@
 	(footprint "Symbol:OSHW-Logo2_9.8x8mm_SilkScreen"
 		(layer "F.Cu")
 		(uuid "718f39a1-5a5e-4548-94ef-ac4b7818d564")
-		(at 178 48)
+		(at 178 42.5)
 		(descr "Open Source Hardware Symbol")
 		(tags "Logo Symbol OSHW")
 		(property "Reference" "REF**"
@@ -3033,11 +3033,12 @@
 	(footprint "local:Screen_Full"
 		(layer "F.Cu")
 		(uuid "a583f5c0-b1d8-4a6d-a65e-1e97547fa442")
-		(at 116.42 53)
+		(at 116.42 48)
 		(property "Reference" "DS1"
 			(at 33.58 0 0)
 			(unlocked yes)
 			(layer "F.SilkS")
+			(hide yes)
 			(uuid "80b0e4de-2d6d-4f40-b101-3c33bc55fd7b")
 			(effects
 				(font
@@ -3088,17 +3089,16 @@
 		(sheetname "/")
 		(sheetfile "moduplay.kicad_sch")
 		(attr through_hole)
-		(fp_poly
-			(pts
-				(xy -2.52 -21.575) (xy -2.52 21.575) (xy 69.68 21.575) (xy 69.68 -21.575)
-			)
+		(fp_rect
+			(start -2.52 -21.575)
+			(end 69.68 21.575)
 			(stroke
-				(width 0.2)
+				(width 0.1)
 				(type solid)
 			)
 			(fill no)
-			(layer "F.SilkS")
-			(uuid "80d32547-8ec5-424e-8b54-f040ee0b52ea")
+			(layer "Margin")
+			(uuid "336287da-6c16-482d-ac05-c9c4953ab2e2")
 		)
 		(fp_text user "7"
 			(at 1.905 -7.62 0)
@@ -3136,19 +3136,20 @@
 				)
 			)
 		)
-		(pad "1" thru_hole circle
+		(pad "1" thru_hole roundrect
 			(at 0 7.62 180)
 			(size 1.8 1.8)
 			(drill 0.9)
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
+			(roundrect_rratio 0.1388888889)
 			(net 1 "GND")
 			(pinfunction "VSS")
 			(pintype "power_in")
 			(uuid "fc5b7eea-b8ea-4dcc-9db0-2554471a8cf2")
 		)
 		(pad "2" thru_hole circle
-			(at 0 5.079999 180)
+			(at 0 5.08 180)
 			(size 1.8 1.8)
 			(drill 0.9)
 			(layers "*.Cu" "*.Mask")
@@ -3192,7 +3193,7 @@
 			(uuid "5e7594d2-9b8a-4916-9785-0d9e3752710f")
 		)
 		(pad "6" thru_hole circle
-			(at 0 -5.079999 180)
+			(at 0 -5.08 180)
 			(size 1.8 1.8)
 			(drill 0.9)
 			(layers "*.Cu" "*.Mask")
@@ -3669,7 +3670,7 @@
 	(footprint "Symbol:KiCad-Logo2_5mm_SilkScreen"
 		(layer "F.Cu")
 		(uuid "bda057fc-dc49-4a68-a395-b869357a63f1")
-		(at 177 38)
+		(at 177.5 33)
 		(descr "KiCad Logo")
 		(tags "Logo KiCad")
 		(property "Reference" "REF**"
@@ -5756,8 +5757,8 @@
 		(embedded_fonts no)
 	)
 	(gr_rect
-		(start 114 31)
-		(end 186 118)
+		(start 113.9 118)
+		(end 186.1 26.5)
 		(stroke
 			(width 0.05)
 			(type solid)
