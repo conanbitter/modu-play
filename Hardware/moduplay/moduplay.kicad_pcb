@@ -82,7 +82,7 @@
 			(layerselection 0x00000000_00000000_55555555_5755f5ff)
 			(plot_on_all_layers_selection 0x00000000_00000000_00000000_00000000)
 			(disableapertmacros no)
-			(usegerberextensions no)
+			(usegerberextensions yes)
 			(usegerberattributes yes)
 			(usegerberadvancedattributes yes)
 			(creategerberjobfile yes)
@@ -110,12 +110,12 @@
 			(hidednponfab no)
 			(sketchdnponfab yes)
 			(crossoutdnponfab yes)
-			(subtractmaskfromsilk no)
+			(subtractmaskfromsilk yes)
 			(outputformat 1)
 			(mirror no)
-			(drillshape 1)
+			(drillshape 0)
 			(scaleselection 1)
-			(outputdirectory "")
+			(outputdirectory "../gerber/")
 		)
 	)
 	(net 0 "")
@@ -2596,7 +2596,7 @@
 			(unlocked yes)
 			(layer "F.SilkS")
 			(hide yes)
-			(uuid "80b0e4de-2d6d-4f40-b101-3c33bc55fd7b")
+			(uuid "f1d608db-50fd-4605-a4d0-98d00dc831b3")
 			(effects
 				(font
 					(size 1 1)
@@ -2608,7 +2608,7 @@
 			(at 33.655 -5.715 0)
 			(unlocked yes)
 			(layer "F.Fab")
-			(uuid "3e673a75-f196-4695-88de-0049f2b8434d")
+			(uuid "473e1bbf-a9be-4901-89a6-bfd8d379a5f1")
 			(effects
 				(font
 					(size 1 1)
@@ -2621,7 +2621,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "57467d07-2f50-40ab-bb54-bad5e4fee708")
+			(uuid "1333ba61-010b-4269-972e-1525fde121e9")
 			(effects
 				(font
 					(size 1 1)
@@ -2634,7 +2634,7 @@
 			(unlocked yes)
 			(layer "F.Fab")
 			(hide yes)
-			(uuid "a45b3e25-1f87-4fd2-a4ba-a34b1598874c")
+			(uuid "05b327a9-6019-4161-b03e-4c6363e83bb8")
 			(effects
 				(font
 					(size 1 1)
@@ -2655,7 +2655,7 @@
 			)
 			(fill no)
 			(layer "F.CrtYd")
-			(uuid "ed21934e-7f1f-4fd0-ab2f-36c2f285eae2")
+			(uuid "5b5053e7-5ae0-4a13-b2cb-559559af8101")
 		)
 		(fp_text user "7"
 			(at 1.905 -7.62 0)
@@ -2665,7 +2665,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.1)
+					(thickness 0.2)
+					(bold yes)
 				)
 			)
 		)
@@ -2677,7 +2678,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.1)
+					(thickness 0.2)
+					(bold yes)
 				)
 			)
 		)
@@ -2842,7 +2844,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.1)
+					(thickness 0.2)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -3641,7 +3644,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.1)
+					(thickness 0.2)
+					(bold yes)
 				)
 				(justify left bottom)
 			)
@@ -3701,7 +3705,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
+					(thickness 0.2)
+					(bold yes)
 				)
 				(justify mirror)
 			)
@@ -4522,7 +4527,8 @@
 			(effects
 				(font
 					(size 1 1)
-					(thickness 0.15)
+					(thickness 0.2)
+					(bold yes)
 				)
 				(justify mirror)
 			)
