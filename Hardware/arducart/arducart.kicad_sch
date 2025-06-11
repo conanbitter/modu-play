@@ -3915,7 +3915,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 163.322 64.77 90)
 			(effects
 				(font
@@ -4051,7 +4051,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 256.032 50.8 90)
 			(effects
 				(font
@@ -4121,7 +4121,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 26.162 90.17 90)
 			(effects
 				(font
@@ -4191,7 +4191,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 245.872 50.8 90)
 			(effects
 				(font
@@ -4457,7 +4457,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "carts:Edge_Connector"
 			(at 73.66 104.14 0)
 			(effects
 				(font
@@ -4611,7 +4611,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 235.712 50.8 90)
 			(effects
 				(font
@@ -4681,7 +4681,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 145.542 64.77 90)
 			(effects
 				(font
@@ -4817,7 +4817,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Horizontal"
 			(at 189.23 134.62 90)
 			(effects
 				(font
@@ -4965,7 +4965,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 154.432 64.77 90)
 			(effects
 				(font
@@ -5167,7 +5167,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder"
 			(at 225.552 50.8 90)
 			(effects
 				(font
@@ -5235,7 +5235,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "carts:Arduino_Pro_Mini"
 			(at 193.04 72.39 0)
 			(effects
 				(font

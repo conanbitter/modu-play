@@ -1,6 +1,5 @@
-Hardware/moduplay/moduplay-backups
-Hardware/moduplay/*.bak
-Hardware/moduplay/fp-info-cache
+Hardware/*/*-backups
+Hardware/*/*.bak
+Hardware/*/fp-info-cache
 Hardware/gerber
 Hardware/carts.bak
-Hardware/arducart/arducart-backups/
