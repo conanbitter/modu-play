@@ -169,17 +169,6 @@
 		(layer "F.SilkS")
 		(uuid "8b2fee93-0db7-4cd8-9cbc-b3a06ee4584c")
 	)
-	(fp_rect
-		(start -5 -3.25)
-		(end 5 6.25)
-		(stroke
-			(width 0.1)
-			(type solid)
-		)
-		(fill no)
-		(layer "F.CrtYd")
-		(uuid "e321617c-0dbf-4979-b846-a30bf5a8bb27")
-	)
 	(fp_text user "CONAN"
 		(at 0 4.75 0)
 		(unlocked yes)
@@ -188,7 +177,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
 			(justify bottom)
 		)
@@ -201,7 +190,7 @@
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.15)
 			)
 			(justify bottom)
 		)

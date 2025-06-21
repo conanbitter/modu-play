@@ -1857,7 +1857,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "e6942889-199b-4ffd-b863-9f5ca3eaf54c")
+			(uuid "97b27f7a-056d-4105-8437-aafe6b338dcd")
 		)
 		(fp_line
 			(start -1 -0.25)
@@ -1867,7 +1867,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "be973f05-643c-4067-a82e-ffc3333d89b8")
+			(uuid "d7a88048-e448-48de-8520-cd47d1a7c55c")
 		)
 		(fp_line
 			(start 1.5 1.25)
@@ -1877,7 +1877,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "1024527f-6d6d-4c37-8243-553154f0c428")
+			(uuid "174f299b-9760-4ad6-ba4d-c96e42e182dd")
 		)
 		(fp_line
 			(start 2 -0.75)
@@ -1887,7 +1887,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "aacd551f-a7ba-408f-8198-d1c07f5129e1")
+			(uuid "a76e1626-aad6-48ba-a63c-eb029d74c712")
 		)
 		(fp_line
 			(start 3.5 -2.75)
@@ -1897,7 +1897,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "b588b157-ed64-470c-b338-cc57ea099a06")
+			(uuid "cf22493a-fa25-4d15-a782-815ab4aea088")
 		)
 		(fp_line
 			(start 3.5 -0.75)
@@ -1907,7 +1907,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "39aba7fc-dfc3-42b2-80d3-73e09a89f95f")
+			(uuid "31fd1f33-60dc-49fe-9d12-4bf300a9b869")
 		)
 		(fp_line
 			(start 3.5 1.25)
@@ -1917,7 +1917,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "ee2823f1-f5fc-4c50-8738-b4a742d3508e")
+			(uuid "d274228b-4123-438a-9d93-1a18228085bb")
 		)
 		(fp_line
 			(start 3.5 2.75)
@@ -1927,7 +1927,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "6234cf09-8c72-4b2f-8f60-c411e502f6ae")
+			(uuid "e6349e89-0509-4521-82d8-514486a6a4c9")
 		)
 		(fp_arc
 			(start -1 2.75)
@@ -1938,7 +1938,7 @@
 				(type default)
 			)
 			(layer "F.SilkS")
-			(uuid "9d3b4041-4282-434e-9161-71fab2d62f2c")
+			(uuid "fdd3c3ee-7e9f-402a-9d49-ea77cf6b1ea4")
 		)
 		(fp_circle
 			(center -1 -0.75)
@@ -1949,7 +1949,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "56b0e437-1025-40c0-9ff0-7c18d84e0c57")
+			(uuid "f6c6063a-d9b9-4030-9179-96509d382e58")
 		)
 		(fp_circle
 			(center -1 1)
@@ -1960,18 +1960,7 @@
 			)
 			(fill no)
 			(layer "F.SilkS")
-			(uuid "bac8dacb-51ed-4ccd-ab2c-55ff2cd241c4")
-		)
-		(fp_rect
-			(start -4.25 -3.25)
-			(end 4 3.25)
-			(stroke
-				(width 0.1)
-				(type solid)
-			)
-			(fill no)
-			(layer "F.CrtYd")
-			(uuid "97a91fef-703d-470e-adfb-565df8ea5ce4")
+			(uuid "42742b75-d518-4f3d-a5bb-5d72c286ddbb")
 		)
 		(fp_text user "${REFERENCE}"
 			(at -0.25 -4.25 0)
