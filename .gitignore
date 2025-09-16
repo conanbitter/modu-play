@@ -3,3 +3,5 @@ Hardware/*/*.bak
 Hardware/*/fp-info-cache
 Hardware/gerber
 Hardware/carts.bak
+Software/Arducard/.vscode
+Software/Arducard/build
