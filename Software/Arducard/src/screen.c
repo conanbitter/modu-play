@@ -10,17 +10,16 @@
 #define SCREEN_DC D7
 #define SCREEN_RES D4
 
-#define DUMMY_CS D10
+#define SCREEN_DUMMY_CS D10
 
 static void spi_init() {
     COUTPUT(SCREEN_MOSI);
     COUTPUT(SCREEN_SCK);
     COUTPUT(SCREEN_CS);
     COUTPUT(SCREEN_DC);
-    COUTPUT(DUMMY_CS); //make SS pin to output so SPI don't switch to slave
+    COUTPUT(SCREEN_DUMMY_CS); //make SS pin to output so SPI don't switch to slave
 
     CINPUT(SCREEN_MISO);
-    //COUTPUT(SCREEN_MISO);
 
     CSET(SCREEN_CS);
     CSET(SCREEN_MOSI);
@@ -28,23 +27,15 @@ static void spi_init() {
     CCLEAR(SCREEN_DC);
     CCLEAR(SCREEN_SCK);
 
-    SPCR = (1 << SPE) | (1 << MSTR);// | (1 << SPR1) | (1 << SPR0);
-    //SPCR = (0 << SPE) | (0 << DORD) | (1 << MSTR) | (0 << CPOL) | (0 << CPHA) | (1 << SPR1) | (0 << SPR1);
-    //SPSR = (0 << SPI2X);
-    //SPDR = 0xFF;
+    SPCR = (1 << SPE) | (1 << MSTR);
 }
 
 static uint8_t spi_send(uint8_t data) {
     SPDR = data;
     while (!(SPSR & (1 << SPIF)));
-    /*_delay_ms(1);
-    return SPDR;*/
-    /*SPDR = data;
-    asm volatile("nop");
-    while (!(SPSR & _BV(SPIF))); // wait
-    return SPDR;*/
-    //SPDR;
-    /*for (uint8_t i = 0; i < 8; i++) {
+    /*
+        // Software SPI
+        for (uint8_t i = 0; i < 8; i++) {
         if (data & 0x80) {
             CSET(SCREEN_MOSI);
         } else {
@@ -57,25 +48,15 @@ static uint8_t spi_send(uint8_t data) {
 }
 
 static inline void oled_enable() {
-    //asm volatile("nop \n nop \n nop");
     CCLEAR(SCREEN_CS);
-    //asm volatile("nop \n nop \n nop");
 }
 
 static inline void oled_disable() {
-    //asm volatile("nop \n nop \n nop");
     CSET(SCREEN_CS);
-    //asm volatile("nop \n nop \n nop");
 }
 
 void oled_init() {
     spi_init();
-
-    //return;
-
-    //spi_send(0xFF);
-    oled_disable();
-    _delay_ms(1);
 
     COUTPUT(SCREEN_RES);
     CSET(SCREEN_RES);
@@ -83,11 +64,10 @@ void oled_init() {
     oled_enable();
 
     CSET(SCREEN_RES);
-    _delay_ms(5);
+    _delay_ms(1);
     CCLEAR(SCREEN_RES);
-    _delay_ms(15);
+    _delay_ms(10);
     CSET(SCREEN_RES);
-    _delay_ms(15);
 
     //startup sequence
 
@@ -117,19 +97,8 @@ void oled_init() {
     spi_send(0x2E);
     spi_send(0xA4);
     spi_send(0xA6);
-    _delay_ms(120);
     spi_send(0xAF);
 
-    /*spi_send(0xB0 + 2);
-    spi_send(0x10);
-    spi_send(0x02);
-    CSET(SCREEN_DC);
-    //for (int y = 0; y < 8; y++) {
-    for (int x = 0; x < 128; x++) {
-        spi_send(0xCC);
-    }
-    //}*/
-    CSET(SCREEN_DC);
     oled_disable();
 }
 
@@ -144,14 +113,12 @@ void oled_test() {
     spi_send(0x22);
     spi_send(0);
     spi_send(7);
-    //spi_send(0xB5);
-    //spi_send(0x02);
-    //spi_send(0x10);
-    //if (data > 5) spi_send(0xAE);
     CSET(SCREEN_DC);
+    uint8_t block = 1 << data;
     for (int x = 0; x < 128 * 8; x++) {
-        spi_send(data);
+        spi_send(block);
     }
     oled_disable();
     data++;
+    if (data > 7) data = 0;
 }

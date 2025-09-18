@@ -9,7 +9,7 @@ int main(void) {
 
     while (1) {
         oled_test();
-        _delay_ms(500);
+        _delay_ms(1000.0 / 60.0);
     }
 
     return 0;
