@@ -14,6 +14,7 @@ static void spi_init() {
     COUTPUT(SCREEN_MOSI);
     COUTPUT(SCREEN_SCK);
     COUTPUT(SCREEN_CS);
+    COUTPUT(SCREEN_DC);
 
     //CINPUT(SCREEN_MISO);
     COUTPUT(SCREEN_MISO);
@@ -21,6 +22,7 @@ static void spi_init() {
     CSET(SCREEN_CS);
     CSET(SCREEN_MOSI);
     CSET(SCREEN_MISO);
+    CCLEAR(SCREEN_DC);
     CCLEAR(SCREEN_SCK);
 
     //SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR1) | (1 << SPR0);
@@ -44,15 +46,15 @@ static void spi_send(uint8_t data) {
 }
 
 static inline void oled_enable() {
-    asm volatile("nop \n nop \n nop");
+    //asm volatile("nop \n nop \n nop");
     CCLEAR(SCREEN_CS);
-    asm volatile("nop \n nop \n nop");
+    //asm volatile("nop \n nop \n nop");
 }
 
 static inline void oled_disable() {
-    asm volatile("nop \n nop \n nop");
+    //asm volatile("nop \n nop \n nop");
     CSET(SCREEN_CS);
-    asm volatile("nop \n nop \n nop");
+    //asm volatile("nop \n nop \n nop");
 }
 
 void oled_init() {
@@ -87,10 +89,10 @@ void oled_init() {
     spi_send(0xD3);
     spi_send(0x00);
     spi_send(0x40);
-    spi_send(0x8D);
-    spi_send(0x14);
+    //spi_send(0x8D);
+    //spi_send(0x14);
     spi_send(0x20);
-    spi_send(0x00);
+    spi_send(0x00);//spi_send(0b10);
     spi_send(0xA1);
     spi_send(0xC8);
     spi_send(0xDA);
@@ -100,14 +102,14 @@ void oled_init() {
     spi_send(0xD9);
     spi_send(0xF1);
     spi_send(0xDB);
-    spi_send(0x40);
+    spi_send(0x3C);
     spi_send(0x2E);
     spi_send(0xA4);
     spi_send(0xA6);
     _delay_ms(120);
     spi_send(0xAF);
 
-    spi_send(0xB0 + 2);
+    /*spi_send(0xB0 + 2);
     spi_send(0x10);
     spi_send(0x02);
     CSET(SCREEN_DC);
@@ -115,8 +117,8 @@ void oled_init() {
     for (int x = 0; x < 128; x++) {
         spi_send(0xCC);
     }
-    //}
-
+    //}*/
+    CSET(SCREEN_DC);
     oled_disable();
 }
 
@@ -131,9 +133,12 @@ void oled_test() {
     spi_send(0x22);
     spi_send(0);
     spi_send(7);
+    //spi_send(0xB5);
+    //spi_send(0x02);
+    //spi_send(0x10);
     //if (data > 5) spi_send(0xAE);
     CSET(SCREEN_DC);
-    for (int x = 0; x < 128; x++) {
+    for (int x = 0; x < 128 * 8; x++) {
         spi_send(data);
     }
     oled_disable();
