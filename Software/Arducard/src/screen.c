@@ -10,14 +10,17 @@
 #define SCREEN_DC D7
 #define SCREEN_RES D4
 
+#define DUMMY_CS D10
+
 static void spi_init() {
     COUTPUT(SCREEN_MOSI);
     COUTPUT(SCREEN_SCK);
     COUTPUT(SCREEN_CS);
     COUTPUT(SCREEN_DC);
+    COUTPUT(DUMMY_CS); //make SS pin to output so SPI don't switch to slave
 
-    //CINPUT(SCREEN_MISO);
-    COUTPUT(SCREEN_MISO);
+    CINPUT(SCREEN_MISO);
+    //COUTPUT(SCREEN_MISO);
 
     CSET(SCREEN_CS);
     CSET(SCREEN_MOSI);
@@ -25,15 +28,23 @@ static void spi_init() {
     CCLEAR(SCREEN_DC);
     CCLEAR(SCREEN_SCK);
 
-    //SPCR = (1 << SPE) | (1 << MSTR) | (1 << SPR1) | (1 << SPR0);
+    SPCR = (1 << SPE) | (1 << MSTR);// | (1 << SPR1) | (1 << SPR0);
+    //SPCR = (0 << SPE) | (0 << DORD) | (1 << MSTR) | (0 << CPOL) | (0 << CPHA) | (1 << SPR1) | (0 << SPR1);
+    //SPSR = (0 << SPI2X);
     //SPDR = 0xFF;
 }
 
-static void spi_send(uint8_t data) {
-    //SPDR = data;
-    //while (!(SPSR & (1 << SPIF)));
+static uint8_t spi_send(uint8_t data) {
+    SPDR = data;
+    while (!(SPSR & (1 << SPIF)));
+    /*_delay_ms(1);
+    return SPDR;*/
+    /*SPDR = data;
+    asm volatile("nop");
+    while (!(SPSR & _BV(SPIF))); // wait
+    return SPDR;*/
     //SPDR;
-    for (uint8_t i = 0; i < 8; i++) {
+    /*for (uint8_t i = 0; i < 8; i++) {
         if (data & 0x80) {
             CSET(SCREEN_MOSI);
         } else {
@@ -42,7 +53,7 @@ static void spi_send(uint8_t data) {
         CSET(SCREEN_SCK);
         data <<= 1;
         CCLEAR(SCREEN_SCK);
-    }
+    }*/
 }
 
 static inline void oled_enable() {

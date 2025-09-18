@@ -1,6 +1,6 @@
 PROJECT = arducard
 
-F_CPU = 16000000
+F_CPU = 16000000UL
 MCU = atmega328p
 DEFINES = 
 
