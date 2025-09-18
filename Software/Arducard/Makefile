@@ -2,9 +2,9 @@ PROJECT = arducard
 
 F_CPU = 16000000
 MCU = atmega328p
-DEFINES = ROTATION90 SD_DEBUG_PRINT
+DEFINES = 
 
-FILES = main.c
+FILES = main.c screen.c
 
 PROGRAMMER = usbasp
 PORT = usb
@@ -44,7 +44,7 @@ LDFLAGS := -mmcu=$(MCU)
 build: $(BUILD_DIR)/$(PROJECT).hex
 
 flash: $(BUILD_DIR)/$(PROJECT).hex
-	$(AVRDUDE) -v -p$(MCU) -c$(PROGRAMMER) -P$(PORT) -b$(BAUDRATE) -D -Uflash:w:$(BUILD_DIR)/$(PROJECT).hex:i
+	$(AVRDUDE) -p$(MCU) -c$(PROGRAMMER) -P$(PORT) -b$(BAUDRATE) -Uflash:w:$(BUILD_DIR)/$(PROJECT).hex:i
 
 $(BUILD_DIR)/$(PROJECT).hex: $(BUILD_DIR)/$(PROJECT).elf
 	$(OBJCOPY) -O ihex $(BUILD_DIR)/$(PROJECT).elf $(BUILD_DIR)/$(PROJECT).hex

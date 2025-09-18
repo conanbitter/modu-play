@@ -2,29 +2,14 @@
 #include <util/delay.h>
 #include "ioports.h"
 #include "arduino.h"
-
-int num;
-
-#define LED D13
-
-void blink_number(int count) {
-    for (int i = 0; i < count; i++) {
-        CSET(LED);
-        _delay_ms(100);
-        CCLEAR(LED);
-        _delay_ms(200);
-    }
-}
+#include "screen.h"
 
 int main(void) {
-    COUTPUT(LED);
-    CCLEAR(LED);
-    num = 1;
+    oled_init();
+
     while (1) {
-        blink_number(num);
-        _delay_ms(700);
-        num++;
-        if (num > 8) num = 1;
+        oled_test();
+        _delay_ms(1000);
     }
 
     return 0;
