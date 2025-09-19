@@ -14,7 +14,7 @@
 
 #define SCREEN_DUMMY_CS D10
 
-static const size_t oled_startup_sequence_size = 24;
+static const size_t oled_startup_sequence_size = 23;
 
 static const uint8_t oled_startup_sequence[24] PROGMEM = {
     0xAE,       // display off
@@ -78,7 +78,7 @@ static inline void oled_deselect() {
     CSET(SCREEN_CS);
 }
 
-static inline void oled_start_com() {
+static void oled_start_com() {
     CCLEAR(SCREEN_DC);
 }
 
@@ -95,6 +95,11 @@ static void oled_sendp(PGM_P values, const size_t count) {
 
 static void oled_cmdp(PGM_P values, const size_t count) {
     oled_start_com();
+    oled_sendp(values, count);
+}
+
+void oled_datap(PGM_P values, const size_t count) {
+    oled_start_data();
     oled_sendp(values, count);
 }
 
@@ -117,6 +122,18 @@ void oled_init() {
     // Startup sequence
 
     oled_cmdp(oled_startup_sequence, oled_startup_sequence_size);
+
+    // clear display
+    oled_start_data();
+    for (int x = 0; x < 128 * 8; x++) {
+        spi_send(0x00);
+    }
+
+    // display on
+
+    //oled_start_com();
+    CCLEAR(SCREEN_DC); // weird bug with oled_start_com
+    spi_send(0xAF);
 
     oled_deselect();
 }
@@ -166,4 +183,12 @@ void oled_test() {
     oled_deselect();
     data++;
     if (data > 7) data = 0;
+}
+
+void oled_begin() {
+    oled_select();
+}
+
+void oled_end() {
+    oled_deselect();
 }

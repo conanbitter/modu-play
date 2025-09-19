@@ -4,7 +4,7 @@ F_CPU = 16000000UL
 MCU = atmega328p
 DEFINES = 
 
-FILES = main.c oled.c
+FILES = main.c oled.c buttons.c
 
 PROGRAMMER = usbasp
 PORT = usb
