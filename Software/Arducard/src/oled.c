@@ -1,7 +1,9 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include "arduino.h"
-#include "screen.h"
+#include "oled.h"
+
+// OLED SSD1309 driver
 
 #define SCREEN_MOSI D11
 #define SCREEN_MISO D12
@@ -12,12 +14,33 @@
 
 #define SCREEN_DUMMY_CS D10
 
+static const size_t oled_startup_sequence_size = 24;
+
+static const uint8_t oled_startup_sequence[24] PROGMEM = {
+    0xAE,       // display off
+    0xD5, 0x80, // clock
+    0xA8, 0x3F, //
+    0xD3, 0x00, // offset
+    0x40,       // start line
+    0x20, 0x00, // adressing mode = horizontal
+    0xA1,       //
+    0xC8,       //
+    0xDA, 0x12, //
+    0x81, 0xCF, // contrast
+    0xD9, 0xF1, //
+    0xDB, 0x3C, //
+    0x2E,       // scroll disable
+    0xA4,       //
+    0xA6,       // inverse off
+    0xAF,       // display on
+};
+
 static void spi_init() {
     COUTPUT(SCREEN_MOSI);
     COUTPUT(SCREEN_SCK);
     COUTPUT(SCREEN_CS);
     COUTPUT(SCREEN_DC);
-    COUTPUT(SCREEN_DUMMY_CS); //make SS pin to output so SPI don't switch to slave
+    COUTPUT(SCREEN_DUMMY_CS); //make SS pin to output so SPI don't autoswitch to slave
 
     CINPUT(SCREEN_MISO);
 
@@ -47,12 +70,32 @@ static uint8_t spi_send(uint8_t data) {
     }*/
 }
 
-static inline void oled_enable() {
+static inline void oled_select() {
     CCLEAR(SCREEN_CS);
 }
 
-static inline void oled_disable() {
+static inline void oled_deselect() {
     CSET(SCREEN_CS);
+}
+
+static inline void oled_start_com() {
+    CCLEAR(SCREEN_DC);
+}
+
+static inline void oled_start_data() {
+    CSET(SCREEN_DC);
+}
+
+static void oled_sendp(PGM_P values, const size_t count) {
+    for (size_t i = 0;i < count;i++) {
+        spi_send(pgm_read_byte(values));
+        values++;
+    }
+}
+
+static void oled_cmdp(PGM_P values, const size_t count) {
+    oled_start_com();
+    oled_sendp(values, count);
 }
 
 void oled_init() {
@@ -61,7 +104,9 @@ void oled_init() {
     COUTPUT(SCREEN_RES);
     CSET(SCREEN_RES);
 
-    oled_enable();
+    oled_select();
+
+    // Reset
 
     CSET(SCREEN_RES);
     _delay_ms(1);
@@ -69,56 +114,56 @@ void oled_init() {
     _delay_ms(10);
     CSET(SCREEN_RES);
 
-    //startup sequence
+    // Startup sequence
 
-    CCLEAR(SCREEN_DC);
-    spi_send(0xAE);
-    spi_send(0xD5);
-    spi_send(0x80);
-    spi_send(0xA8);
-    spi_send(0x3F);
-    spi_send(0xD3);
-    spi_send(0x00);
-    spi_send(0x40);
-    //spi_send(0x8D);
-    //spi_send(0x14);
-    spi_send(0x20);
-    spi_send(0x00);//spi_send(0b10);
-    spi_send(0xA1);
-    spi_send(0xC8);
-    spi_send(0xDA);
-    spi_send(0x12);
-    spi_send(0x81);
-    spi_send(0xCF);
-    spi_send(0xD9);
-    spi_send(0xF1);
-    spi_send(0xDB);
-    spi_send(0x3C);
-    spi_send(0x2E);
-    spi_send(0xA4);
-    spi_send(0xA6);
-    spi_send(0xAF);
+    oled_cmdp(oled_startup_sequence, oled_startup_sequence_size);
 
-    oled_disable();
+    oled_deselect();
 }
 
-static uint8_t data = 0;
+void oled_set_window(int left, int right, int top, int bottom) {
+    oled_start_com();
+    spi_send(0x21);
+    spi_send(left);
+    spi_send(right);
+    spi_send(0x22);
+    spi_send(top);
+    spi_send(bottom);
+}
 
-void oled_test() {
-    oled_enable();
-    CCLEAR(SCREEN_DC);
+void oled_reset_window() {
+    oled_start_com();
     spi_send(0x21);
     spi_send(0);
     spi_send(127);
     spi_send(0x22);
     spi_send(0);
     spi_send(7);
-    CSET(SCREEN_DC);
+}
+
+void oled_send(const uint8_t* values, const size_t count) {
+    for (size_t i = 0;i < count;i++) {
+        spi_send(*values);
+        values++;
+    }
+}
+
+void oled_data(const uint8_t* values, const size_t count) {
+    oled_start_data();
+    oled_send(values, count);
+}
+
+static uint8_t data = 0;
+
+void oled_test() {
+    oled_select();
+    oled_reset_window();
+    oled_start_data();
     uint8_t block = 1 << data;
     for (int x = 0; x < 128 * 8; x++) {
         spi_send(block);
     }
-    oled_disable();
+    oled_deselect();
     data++;
     if (data > 7) data = 0;
 }
