@@ -2,7 +2,7 @@
 #include <util/delay.h>
 #include "ioports.h"
 #include "arduino.h"
-#include "screen.h"
+#include "oled.h"
 
 int main(void) {
     oled_init();
