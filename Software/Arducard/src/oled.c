@@ -70,19 +70,19 @@ static uint8_t spi_send(uint8_t data) {
     }*/
 }
 
-static inline void oled_select() {
+static  __attribute__((always_inline)) inline void oled_select() {
     CCLEAR(SCREEN_CS);
 }
 
-static inline void oled_deselect() {
+static  __attribute__((always_inline)) inline void oled_deselect() {
     CSET(SCREEN_CS);
 }
 
-static void oled_start_com() {
+static __attribute__((always_inline)) inline void oled_start_com() {
     CCLEAR(SCREEN_DC);
 }
 
-static inline void oled_start_data() {
+static __attribute__((always_inline)) inline void oled_start_data() {
     CSET(SCREEN_DC);
 }
 
@@ -126,13 +126,12 @@ void oled_init() {
     // clear display
     oled_start_data();
     for (int x = 0; x < 128 * 8; x++) {
-        spi_send(0x00);
+        spi_send(0xCC);
     }
 
     // display on
 
-    //oled_start_com();
-    CCLEAR(SCREEN_DC); // weird bug with oled_start_com
+    oled_start_com();
     spi_send(0xAF);
 
     oled_deselect();
