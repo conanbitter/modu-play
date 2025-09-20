@@ -5,6 +5,7 @@
 #include "arduino.h"
 #include "oled.h"
 #include "buttons.h"
+#include "screenbuffer.h"
 
 const uint8_t button_off[8] PROGMEM = {
     0b00111100,
@@ -47,9 +48,13 @@ ISR(TIMER1_COMPA_vect) {
     frames++;
 }
 
+int x = 64;
+int y = 32;
+
 int main(void) {
-    //oled_init();
-    //btn_init();
+    oled_init();
+    btn_init();
+    sb_init();
 
     COUTPUT(D13);
     timer_init();
@@ -68,9 +73,30 @@ int main(void) {
         oled_end();
         //oled_test();
         _delay_ms(1000.0 / 60.0);*/
-        if (frames >= 60) {
+        /*if (frames >= 60) {
             CTOGGLE(D13);
             frames -= 60;
+        }*/
+        while (frames > 0)
+        {
+            int newx = x;
+            int newy = y;
+
+            if (btn_get(0) && newy > 0) newy--;
+            if (btn_get(1) && newy < 63) newy++;
+            if (btn_get(2) && newx > 0) newx--;
+            if (btn_get(3) && newx < 127) newx++;
+
+            if (x != newx || y != newy) {
+                sb_putpixel(x, y, 0);
+                sb_putpixel(newx, newy, 1);
+            }
+
+            x = newx;
+            y = newy;
+
+            oled_update(sb_getpointer());
+            frames--;
         }
     }
 

@@ -191,3 +191,9 @@ void oled_begin() {
 void oled_end() {
     oled_deselect();
 }
+
+void oled_update(uint8_t* buffer) {
+    oled_select();
+    oled_data(buffer, 128 * 8);
+    oled_deselect();
+}

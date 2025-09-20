@@ -13,6 +13,8 @@ void oled_set_window(int left, int right, int top, int bottom);
 void oled_begin();
 void oled_end();
 
+void oled_update(uint8_t* buffer);
+
 //void oled_setxy(int x, int y);
 //void oled_cmd(uint8_t command);
 //void oled_cmd1a(uint8_t command, uint8_t arg);
