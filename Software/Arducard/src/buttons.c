@@ -7,7 +7,7 @@
 #define BTN_LEFT A2
 #define BTN_RIGHT A3
 #define BTN_A D3
-#define BTN_B A2
+#define BTN_B D2
 
 void btn_init()
 {

@@ -34,6 +34,7 @@ void draw_button(int x, int y, int enabled) {
 
 int main(void) {
     oled_init();
+    btn_init();
 
     while (1) {
         oled_begin();
