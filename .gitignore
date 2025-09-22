@@ -5,3 +5,6 @@ Hardware/gerber
 Hardware/carts.bak
 Software/Arducard/.vscode
 Software/Arducard/build
+Software/Simulator/.vscode
+Software/Simulator/build
+
