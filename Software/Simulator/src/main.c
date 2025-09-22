@@ -3,6 +3,7 @@
 
 #define SCREEN_WIDTH (128)
 #define SCREEN_HEIGHT (64)
+#define SCREEN_LINES (8)
 #define INIT_SCALE (8)
 
 SDL_Window* window = NULL;
@@ -14,19 +15,24 @@ SDL_FRect screen_rect = { 0, 0, SCREEN_WIDTH * INIT_SCALE, SCREEN_HEIGHT * INIT_
 Uint32 color_black = 0;
 Uint32 color_white = 0;
 
+uint8_t buffer[SCREEN_WIDTH * SCREEN_LINES];
+
 static void update_screen() {
     Uint32* pixels;
     int pitch;
     if (SDL_LockTexture(screen, NULL, &pixels, &pitch)) {
         pitch /= sizeof(Uint32);
 
-        //uint8_t* frame_pixel = framebuffer;
-        for (int y = 0; y < SCREEN_HEIGHT; y++) {
+        for (int l = 0; l < SCREEN_LINES; l++) {
             for (int x = 0; x < SCREEN_WIDTH; x++) {
-                pixels[y * pitch + x] = color_black;
+                uint8_t column = buffer[l * SCREEN_WIDTH + x];
+                for (int p = 0;p < 8;p++) {
+                    bool color = column & (1 << p);
+                    int y = l * 8 + p;
+                    pixels[y * pitch + x] = color ? color_white : color_black;
+                }
             }
         }
-        pixels[10 * pitch + 10] = color_white;
         SDL_UnlockTexture(screen);
     } else {
         SDL_Log("Screen update error: %s", SDL_GetError());
@@ -78,6 +84,8 @@ int main(int argc, char** argv) {
     const SDL_PixelFormatDetails* format = SDL_GetPixelFormatDetails(screen->format);
     color_black = SDL_MapRGBA(format, NULL, 0, 20, 40, 255);
     color_white = SDL_MapRGBA(format, NULL, 229, 242, 255, 255);
+
+    memset(buffer, 0x00, sizeof(buffer));
 
     SDL_Event event;
     bool isRunning = true;
