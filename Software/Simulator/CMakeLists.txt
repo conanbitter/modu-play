@@ -13,6 +13,7 @@ set(SRC_FILES
     main.c
     core.c
     canvas.c
+    input.c
 )
 
 list(TRANSFORM SRC_FILES PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/src/)

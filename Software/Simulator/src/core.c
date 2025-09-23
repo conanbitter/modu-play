@@ -81,6 +81,9 @@ void mp_begin() {
     const SDL_PixelFormatDetails* format = SDL_GetPixelFormatDetails(screen->format);
     color_black = SDL_MapRGBA(format, NULL, 0, 20, 40, 255);
     color_white = SDL_MapRGBA(format, NULL, 229, 242, 255, 255);
+
+    mp_clear();
+    _mpc_buttons_init();
 }
 
 bool _mpc_process_events() {
@@ -132,12 +135,67 @@ bool _mpc_process_events() {
                 case SDLK_0:
                     set_scale(10);
                     break;
+                case SDLK_UP:
+                    _mpc_button_down(UP_BUTTON);
+                    break;
+                case SDLK_DOWN:
+                    _mpc_button_down(DOWN_BUTTON);
+                    break;
+                case SDLK_LEFT:
+                    _mpc_button_down(LEFT_BUTTON);
+                    break;
+                case SDLK_RIGHT:
+                    _mpc_button_down(RIGHT_BUTTON);
+                    break;
+                case SDLK_Z:
+                    _mpc_button_down(A_BUTTON);
+                    break;
+                case SDLK_X:
+                    _mpc_button_down(B_BUTTON);
+                    break;
+                case SDLK_A:
+                    _mpc_button_down(X_BUTTON);
+                    break;
+                case SDLK_D:
+                    _mpc_button_down(Y_BUTTON);
+                    break;
+                case SDLK_RETURN:
+                    _mpc_button_down(MENU_BUTTON);
+                    break;
                 }
-                // TODO
             }
             break;
         case SDL_EVENT_KEY_UP:
-            // TODO
+            switch (event.key.key)
+            {
+            case SDLK_UP:
+                _mpc_button_up(UP_BUTTON);
+                break;
+            case SDLK_DOWN:
+                _mpc_button_up(DOWN_BUTTON);
+                break;
+            case SDLK_LEFT:
+                _mpc_button_up(LEFT_BUTTON);
+                break;
+            case SDLK_RIGHT:
+                _mpc_button_up(RIGHT_BUTTON);
+                break;
+            case SDLK_Z:
+                _mpc_button_up(A_BUTTON);
+                break;
+            case SDLK_X:
+                _mpc_button_up(B_BUTTON);
+                break;
+            case SDLK_A:
+                _mpc_button_up(X_BUTTON);
+                break;
+            case SDLK_D:
+                _mpc_button_up(Y_BUTTON);
+                break;
+            case SDLK_RETURN:
+                _mpc_button_up(MENU_BUTTON);
+                break;
+            }
             break;
         }
     }
