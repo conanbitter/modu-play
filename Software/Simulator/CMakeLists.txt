@@ -8,7 +8,11 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 add_subdirectory(vendor/SDL EXCLUDE_FROM_ALL)
 
 set(SRC_FILES
+    moduplay.h
+    mpcore.h
     main.c
+    core.c
+    canvas.c
 )
 
 list(TRANSFORM SRC_FILES PREPEND ${CMAKE_CURRENT_SOURCE_DIR}/src/)
