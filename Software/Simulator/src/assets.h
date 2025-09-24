@@ -1,15 +1,14 @@
 #ifndef _ASSETS_H_
 #define _ASSETS_H_
 
-const unsigned char IMG_BALLOON[34];
+extern const unsigned char IMG_BALLOON[];
 
-const unsigned char IMG_BALLOON_SMALL[66];
+extern const unsigned char IMG_BALLOON_SMALL[];
 
-const unsigned char IMG_LOGO_FRAME[74];
+extern const unsigned char IMG_LOGO_FRAME[];
 
-const unsigned char IMG_LOGO[146];
+extern const unsigned char IMG_LOGO[];
 
-const unsigned char IMG_TEST_PATTERN[10];
-
+extern const unsigned char IMG_TEST_PATTERN[];
 
 #endif

@@ -14,6 +14,7 @@ outh.write(
 
 """
 )
+outc.write("#include \"assets.h\"\n\n")
 
 
 def convert_name(name):
@@ -48,7 +49,7 @@ def convert_file(filename):
         array_size *= 2
     array_size += 2
 
-    outh.write(f"const unsigned char {name}[{array_size}];\n\n")
+    outh.write(f"extern const unsigned char {name}[];\n\n")
     outc.write(f"const unsigned char {name}[{array_size}] = {{\n")
     outc.write(f"    {img.width}, {lines},\n")
 
@@ -97,6 +98,6 @@ for entry in os.listdir(folder):
 for filename in files:
     convert_file(filename)
 
-outh.write("\n#endif\n")
+outh.write("#endif\n")
 outc.close()
 outh.close()
