@@ -32,6 +32,11 @@ void _mpc_present();
 void _mpc_finish();
 void _mpc_just_clear();
 
+void draw_simple(int x, int line, const uint8_t* image, int width, int height);
+void draw_oneline(int x, int line, const uint8_t* image, int width, int offset);
+void draw_multiline(int x, int line, const uint8_t* image, int width, int height, int offset);
+void mp_draw(int x, int y, const uint8_t* image);
+
 #define MPCORE_MAIN                         \
 int main(int argc, char** argv) {           \
     mp_begin();                             \
